@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Safar Banner](https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop)
+![Shree Ram Mandir Ayodhya](https://upload.wikimedia.org/wikipedia/commons/d/df/Ayodhya_Ram_Mandir_Inauguration_Day_Picture.jpg)
 
 ### *Har Safar. Perfectly Planned.*
 **A high-precision Indian travel logistics and itinerary generator built for real ground realities.**
