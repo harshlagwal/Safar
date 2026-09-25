@@ -1,0 +1,323 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #fafafa;
+  --surface: #ffffff;
+  --text: #0c0c0e;
+  --text-muted: #374151; /* Antigravity solid charcoal subfont */
+  --border: #e2e8f0;
+  --accent: #ea580c;
+  --nav-glass: rgba(250, 250, 250, 0.72);
+  --card-subtle: #f8fafc;
+  --input-bg: #ffffff;
+}
+
+html.dark {
+  --background: #000000;
+  --surface: #18181b;
+  --text: #f9fafb;
+  --text-muted: #d1d5db; /* High-clarity subfont in dark mode */
+  --border: #27272a;
+  --accent: #ff6b35;
+  --nav-glass: rgba(22, 22, 23, 0.85);
+  --card-subtle: #27272a;
+  --input-bg: #18181b;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', 'Inter', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text);
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    overflow-x: hidden;
+  }
+
+  /* Deep, bold, solid Antigravity typography for headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    color: #0c0c0e;
+  }
+
+  /* Rich, crisp Antigravity subfont for body & descriptions */
+  p {
+    color: #374151;
+  }
+
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  html.dark h4,
+  html.dark h5,
+  html.dark h6 {
+    color: #f9fafb;
+  }
+
+  html.dark p {
+    color: #d1d5db;
+  }
+}
+
+/* Official Lenis Smooth Scroll Engine Styles (Eliminates Jitter & Lag) */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Universal Hardware Acceleration (GPU Compositing Layer) */
+.apple-gpu {
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Low-End Laptop & Mobile Optimizer: Skip rendering off-screen DOM to save CPU/battery */
+.render-optimize {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 350px;
+}
+
+/* Apple Smooth Page Transition Entrance */
+@keyframes applePageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apple-page-enter {
+  animation: applePageFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Google Gemini Rotating Border Beam Engine */
+@keyframes geminiBorderSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gemini-border-spin {
+  animation: geminiBorderSpin 3s linear infinite;
+  will-change: transform;
+}
+
+/* Mobile & Touch Momentum Scroll Safety */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Custom subtle shadows matching Apple feel */
+.apple-card-shadow {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.apple-card-shadow-hover:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+}
+
+/* Dark mode shadow replacement with 1px border */
+html.dark .apple-card-shadow {
+  box-shadow: none !important;
+  border-color: #333336 !important;
+}
+
+html.dark .apple-card-shadow-hover:hover {
+  box-shadow: none !important;
+  border-color: #48484a !important;
+}
+
+/* Glass effect */
+.nav-glass {
+  background: var(--nav-glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+html.dark .nav-glass {
+  background: rgba(22, 22, 23, 0.8) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom-color: #333336 !important;
+}
+
+/* Scoped dark theme overrides for existing utility classes */
+html.dark .bg-\[\#fafafa\] {
+  background-color: #000000 !important;
+}
+
+html.dark .bg-white {
+  background-color: #1d1d1f !important;
+}
+
+/* High contrast Antigravity text enhancements across whole website */
+.text-\[\#86868b\] {
+  color: #374151 !important;
+}
+
+.text-\[\#1d1d1f\] {
+  color: #0c0c0e !important;
+}
+
+html.dark .text-\[\#1d1d1f\] {
+  color: #f9fafb !important;
+}
+
+html.dark .text-\[\#86868b\] {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-\[\#3a3a3c\] {
+  color: #e2e8f0 !important;
+}
+
+html.dark .border-\[\#e8e8ed\] {
+  border-color: #333336 !important;
+}
+
+html.dark .bg-\[\#f2f2f5\],
+html.dark .bg-\[\#f5f5f7\] {
+  background-color: #2c2c2e !important;
+}
+
+html.dark .hover\:bg-\[\#fafafa\]:hover {
+  background-color: #262629 !important;
+}
+
+html.dark .hover\:bg-\[\#f2f2f5\]:hover,
+html.dark .hover\:bg-\[\#f5f5f7\]:hover {
+  background-color: #3a3a3c !important;
+}
+
+
+
+/* Form inputs in dark mode */
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #1d1d1f !important;
+  border-color: #333336 !important;
+  color: #f5f5f7 !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: rgba(161, 161, 166, 0.5) !important;
+}
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  border-color: #ff6b35 !important;
+  outline: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d1d6;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a6;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #333336;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #48484a;
+}
+
+/* ==========================================================================
+   Google Antigravity & Apple 60/120 FPS GPU Hardware Acceleration Layer
+   ========================================================================== */
+
+/* Isolates complex SVG maps and interactive canvases onto dedicated GPU VRAM composite quads */
+.antigravity-gpu-layer {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Offload dot breathing animations to pure GPU compositor thread (0% CPU load) */
+@keyframes antigravityDotBreathe {
+  0%, 100% {
+    opacity: 0.82;
+  }
+  50% {
+    opacity: 1.0;
+  }
+}
+
+.antigravity-dot-pulse {
+  animation: antigravityDotBreathe 2.4s ease-in-out infinite;
+  will-change: opacity;
+}
+
+/* GPU-accelerated outer flame glow (animating opacity only, never strokeWidth or SVG filters) */
+@keyframes antigravityFlameGlow {
+  0%, 100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.antigravity-flame-pulse {
+  animation: antigravityFlameGlow 3s ease-in-out infinite;
+  will-change: opacity;
+}
+
+/* Smooth hardware scrolling acceleration */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

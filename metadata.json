@@ -1,0 +1,6 @@
+{
+  "name": "Safar",
+  "description": "Har Safar. Perfectly Planned. Apple-style AI travel planner for India with smart routes, day-by-day itineraries, and budget breakdowns.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

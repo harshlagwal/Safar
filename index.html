@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      const t = localStorage.getItem('safar-theme')
+        || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', t === 'dark');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safar — Har Safar. Perfectly Planned.</title>
+    <meta name="description" content="Har Safar. Perfectly Planned. Smart AI travel planner for India with optimized routes, day-by-day itineraries, and budget breakdowns." />
+    <meta property="og:title" content="Safar — Har Safar. Perfectly Planned." />
+    <meta property="og:description" content="Har Safar. Perfectly Planned. Smart AI travel planner for India with optimized routes, day-by-day itineraries, and budget breakdowns." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/favicon-32.png" />
+    <link rel="icon" type="image/svg+xml" href="/safar-logo-pin.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#fafafa] text-[#1d1d1f] antialiased selection:bg-[#ff6b35]/20 selection:text-[#ff6b35]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

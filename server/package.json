@@ -1,0 +1,33 @@
+{
+  "name": "safar-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "google-auth-library": "^11.1.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.9.5",
+    "nanoid": "^5.0.9",
+    "nodemailer": "^10.0.10",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "transform": {}
+  }
+}
